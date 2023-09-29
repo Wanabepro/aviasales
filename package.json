@@ -29,7 +29,7 @@
       "eslint",
       "prettier --write"
     ],
-    "*.css": "prettier --write"
+    "*.{css, scss}": "prettier --write"
   },
   "eslintConfig": {
     "extends": [

@@ -7,7 +7,7 @@ function Filters() {
     <div className={styles.filters}>
       <h2 className={styles.filters__header}>Количество пересадок</h2>
       <form action="">
-        <ul>
+        <ul className={styles.filters__list}>
           <li className={styles.filters__item}>
             <label className={styles.filters__label}>
               <input className={styles.filters__checkbox} type="checkbox" />

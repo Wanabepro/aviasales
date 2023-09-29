@@ -73,3 +73,24 @@
     font-size: 1.3rem;
   }
 }
+
+@media (max-width: 671px) {
+  .filters {
+    max-width: 50.2rem;
+    margin: 0 auto;
+    padding: 0.5rem;
+
+    &__header {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      overflow-x: auto;
+    }
+
+    &__text {
+      white-space: nowrap;
+    }
+  }
+}

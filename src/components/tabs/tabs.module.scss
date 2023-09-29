@@ -47,3 +47,10 @@
     height: 0;
   }
 }
+
+@media (max-width: 671px) {
+  .tabs {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

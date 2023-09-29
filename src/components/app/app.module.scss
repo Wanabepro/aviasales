@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: calc(5rem - (8.9rem / 2 - 3rem)) 0;
+  padding-top: calc(5rem - (8.9rem / 2 - 3rem) - 1rem);
+  padding-bottom: calc(5rem - (8.9rem / 2 - 3rem));
 }
 
 .content {
@@ -18,4 +19,19 @@
 
 .main {
   width: 66.578%;
+}
+
+@media(max-width: 671px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .main {
+    width: 100%;
+  }
 }
