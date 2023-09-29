@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc(5rem - (8.9rem / 2 - 3rem)) 0;
+}
+
+.content {
+  max-width: 75.4rem;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 30.7692%;
+}
+
+.main {
+  width: 66.578%;
+}

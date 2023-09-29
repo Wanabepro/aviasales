@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  color: #4A4A4A;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 96rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #f3f7fa;
+  padding: 1rem;
+}

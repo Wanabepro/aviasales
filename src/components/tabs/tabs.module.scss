@@ -1,0 +1,49 @@
+.tabs {
+  display: flex;
+  max-width: 50.2rem;
+  border-radius: 0.6rem;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 2rem;
+
+  &__item {
+    width: calc(100% / 3 + 1px);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid #dfe5ec;
+    transition: all 200ms ease-in;
+
+    &:first-child {
+      border-radius: 0.6rem 0 0 0.6rem;
+    }
+    
+    &:last-child {
+      border-radius: 0 0.6rem 0.6rem 0;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid #dfe5ec;
+      margin-right: -1px;
+    }
+
+    &:has(label .tabs__radio:checked) {
+      background-color: #2196f3;
+      color: #fff;
+      border-color: #2196f3;
+    }
+  }
+
+  &__label {
+    display: block;
+    padding: 1.5rem;
+  }
+
+  &__radio {
+    position: absolute;
+    appearance: none;
+    width: 0;
+    height: 0;
+  }
+}

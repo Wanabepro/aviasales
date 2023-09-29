@@ -1,0 +1,16 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+
+  &__header {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #a0b0b9;
+  }
+
+  &__info {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
