@@ -13,9 +13,9 @@ function App() {
         <img className={styles.header__logo} src="/logo.svg" alt="Aviasales logo" />
       </header>
       <div className={styles.content}>
-        <sidebar className={styles.sidebar}>
+        <aside className={styles.sidebar}>
           <Filters />
-        </sidebar>
+        </aside>
         <main className={styles.main}>
           <Tabs />
           <TicketsList />

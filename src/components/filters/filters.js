@@ -1,48 +1,43 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 
+import { toggleAllFilters, toggleFilter } from '../../store/filtersSlice'
+
+import Filter from './filter'
 import styles from './filters.module.scss'
 
+const filters = [
+  { text: 'Без пересадок', value: '0' },
+  { text: '1 пересадка', value: '1' },
+  { text: '2 пересадки', value: '2' },
+  { text: '3 пересадки', value: '3' },
+]
+
 function Filters() {
+  const dispatch = useDispatch()
+
+  const onAllChange = () => {
+    dispatch(toggleAllFilters())
+  }
+
+  const onChange = (e) => {
+    dispatch(toggleFilter(e.target.value))
+  }
+
   return (
     <div className={styles.filters}>
       <h2 className={styles.filters__header}>Количество пересадок</h2>
       <form action="">
         <ul className={styles.filters__list}>
           <li className={styles.filters__item}>
-            <label className={styles.filters__label}>
-              <input className={styles.filters__checkbox} type="checkbox" />
-              <span className={styles['filters__custom-checkbox']} />
-              <span className={styles.filters__text}>Все</span>
-            </label>
+            <Filter text="Все" value="all" onChange={onAllChange} />
           </li>
-          <li className={styles.filters__item}>
-            <label className={styles.filters__label}>
-              <input className={styles.filters__checkbox} type="checkbox" />
-              <span className={styles['filters__custom-checkbox']} />
-              <span className={styles.filters__text}>Без пересадок</span>
-            </label>
-          </li>
-          <li className={styles.filters__item}>
-            <label className={styles.filters__label}>
-              <input className={styles.filters__checkbox} type="checkbox" />
-              <span className={styles['filters__custom-checkbox']} />
-              <span className={styles.filters__text}>1 пересадка</span>
-            </label>
-          </li>
-          <li className={styles.filters__item}>
-            <label className={styles.filters__label}>
-              <input className={styles.filters__checkbox} type="checkbox" />
-              <span className={styles['filters__custom-checkbox']} />
-              <span className={styles.filters__text}>2 пересадки</span>
-            </label>
-          </li>
-          <li className={styles.filters__item}>
-            <label className={styles.filters__label}>
-              <input className={styles.filters__checkbox} type="checkbox" />
-              <span className={styles['filters__custom-checkbox']} />
-              <span className={styles.filters__text}>3 пересадки</span>
-            </label>
-          </li>
+
+          {filters.map((filter) => (
+            <li key={filter.value} className={styles.filters__item}>
+              <Filter {...filter} onChange={onChange} />
+            </li>
+          ))}
         </ul>
       </form>
     </div>
