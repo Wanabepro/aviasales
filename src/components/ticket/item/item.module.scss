@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
 
+  &__column {
+    width: 33%;
+  }
+
   &__header {
     font-size: 1.2rem;
     font-weight: 400;

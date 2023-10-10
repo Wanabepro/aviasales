@@ -26,7 +26,7 @@
   },
   "plugins": ["react", "prettier", "import"],
   "rules": {
-    "no-param-reassign": "off",
+    "no-param-reassign": ["error", { "props": false }],
     "no-shadow": "off",
     "object-curly-newline": "off",
     "react/static-property-placement": ["error", "static public field"],
