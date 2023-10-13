@@ -19,20 +19,20 @@ const ticketsApi = createApi({
             searchId = response.data.searchId
           }
 
-          const response1 = await fetchWithBQ(`./tickets?searchId=${searchId}&limit=5`)
-          if (response1.error) return { error: response1.error }
+          const response = await fetchWithBQ(`./tickets?searchId=${searchId}&limit=5`)
+          if (response.error) return { error: response.error }
 
           const previousTickets = data?.tickets
-          const { stop, tickets: newTickets } = response1.data
+          const { stop, tickets: newTickets } = response.data
           return {
             data: {
-              searchId: stop ? null : searchId,
+              searchId,
               stop,
-              tickets: previousTickets ? [...previousTickets, ...newTickets] : newTickets,
+              tickets: previousTickets ? previousTickets.concat(newTickets) : newTickets,
             },
           }
         } catch (error) {
-          return { error }
+          return { error: error.message }
         }
       },
     }),

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 import { useGetTicketsQuery } from '../../store/ticketsApi'
 import Ticket from '../ticket'
@@ -6,10 +6,15 @@ import Ticket from '../ticket'
 import styles from './ticketList.module.scss'
 
 function TicketsList() {
-  const { data, isError, refetch } = useGetTicketsQuery()
+  const isPolling = useRef(true)
+  const { data, isError } = useGetTicketsQuery(undefined, {
+    pollingInterval: isPolling.current,
+  })
+
+  isPolling.current = !data?.stop
 
   const displayedPosts = data?.tickets.map((ticket) => (
-    <li>
+    <li key={`${ticket.segments[0].origin}${ticket.segments[0].date}`}>
       <Ticket {...ticket} />
     </li>
   ))
@@ -18,17 +23,9 @@ function TicketsList() {
     <>
       <ul className={styles.list}>{displayedPosts}</ul>
       {!isError && (
-        <button className={styles.button} type="button" onClick={refetch}>
-          Показать еще 500 билетов!
+        <button className={styles.button} type="button">
+          Показать еще 5 билетов!
         </button>
-      )}
-      {isError && (
-        <div>
-          <h1>Error ocured</h1>
-          <button type="button" onClick={refetch}>
-            Refetch
-          </button>
-        </div>
       )}
     </>
   )

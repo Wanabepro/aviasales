@@ -5,7 +5,7 @@ import styles from './ticket.module.scss'
 
 function Ticket({ price, carrier, segments }) {
   const displayedItems = segments.map((segment) => (
-    <li key={`${segment.origin}${segment.destination}${segment.duration}`}>
+    <li key={segment.origin}>
       <Item {...segment} />
     </li>
   ))
