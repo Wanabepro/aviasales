@@ -11,7 +11,7 @@ const tabs = [
 
 function Tabs() {
   return (
-    <form action="">
+    <form>
       <ul className={styles.tabs}>
         {tabs.map((tab) => (
           <li className={styles.tabs__item} key={tab.value}>

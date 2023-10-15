@@ -1,0 +1,39 @@
+.error {
+  position: fixed;
+  width: 80%;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0.6rem;
+  background-color: #ff4141b1;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-align: center;
+
+  &__heading {
+    font-size: 3.6rem;
+    margin-bottom: 1rem;
+  }
+
+  &__message {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background-color: #ff4141;
+    color: #fff;
+  }
+}
+
+@media(max-width: 671px) {
+  .error {
+    width: calc(100% - 2rem);
+  }
+}

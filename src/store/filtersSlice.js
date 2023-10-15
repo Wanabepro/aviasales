@@ -35,4 +35,6 @@ export const selectFilter = Object.keys(initialState).reduce(
   {},
 )
 
+export const selectAllFilters = (state) => state.filters
+
 export default filtersSlice.reducer

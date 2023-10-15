@@ -6,8 +6,10 @@ import declension from '../../../helpers/declension'
 import styles from './item.module.scss'
 
 function Item({ origin, destination, duration, stops, date }) {
-  const minutes = duration % 60
-  const hours = (duration - minutes) / 60
+  let minutes = duration % 60
+  minutes = minutes > 9 ? minutes : `0${minutes}`
+  let hours = (duration - minutes) / 60
+  hours = hours > 9 ? hours : `0${hours}`
 
   const [departure, arrival] = timeCounter(date, duration)
 

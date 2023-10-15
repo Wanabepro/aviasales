@@ -19,7 +19,7 @@ const ticketsApi = createApi({
             searchId = response.data.searchId
           }
 
-          const response = await fetchWithBQ(`./tickets?searchId=${searchId}&limit=5`)
+          const response = await fetchWithBQ(`./tickets?searchId=${searchId}`)
           if (response.error) return { error: response.error }
 
           const previousTickets = data?.tickets
