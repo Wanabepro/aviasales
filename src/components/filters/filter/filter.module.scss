@@ -52,7 +52,11 @@
 }
 
 @media (max-width: 671px) {
-  .filter__text {
-    white-space: nowrap;
+  .filter {
+    padding: 1rem;
+
+    &__text {
+      white-space: nowrap;
+    }
   }
 }

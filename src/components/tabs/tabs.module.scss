@@ -50,8 +50,6 @@
     appearance: none;
     width: 0;
     height: 0;
-
-    
   }
 }
 
@@ -59,5 +57,11 @@
   .tabs {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (max-width: 449px) {
+  .tabs__label {
+    padding: 1.5rem 0.5rem;
   }
 }
