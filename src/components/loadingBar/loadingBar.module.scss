@@ -1,0 +1,28 @@
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #f3f7fa;
+  overflow: hidden;
+
+  &__fill {
+    width: 20%;
+    height: 1.5rem;
+    background-color: #2196f3;
+
+    animation: fill-movement 1.5s ease-in forwards infinite;
+  }
+}
+
+@keyframes fill-movement {
+  0% {
+    transform: translateX(-101%);
+  }
+
+  100% {
+    transform: translateX(500%);
+  }
+}

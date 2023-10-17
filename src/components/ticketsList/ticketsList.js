@@ -5,6 +5,7 @@ import useSortTickets from '../../hooks/useSortTickets'
 import useFilterTickets from '../../hooks/useFilterTickets'
 import Ticket from '../ticket'
 import Error from '../error'
+import LoadingBar from '../loadingBar/loadingBar'
 
 import styles from './ticketList.module.scss'
 
@@ -68,6 +69,7 @@ function TicketsList() {
           Показать еще 5 билетов!
         </button>
       )}
+      {isPolling.current && !showError && <LoadingBar />}
       {showError && <Error onClick={onErrorClick} error={error} />}
     </>
   )
